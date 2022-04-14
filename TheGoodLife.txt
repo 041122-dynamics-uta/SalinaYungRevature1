@@ -1,0 +1,16 @@
+The Good Life
+
+Data & Logic:
+Each of five neighborhood dogs (Saber, Ginger, Nutmeg, Pepper, and Bear) is enjoying one of the following activities: getting its ears scratched, playing catch, taking a nap, burying a chew toy, and going for a walk.
+
+1. Pepper is either playing catch or burying a chew toy. = Pepper is NOT getting its ears scratched, taking a nap, or going for a walk
+2. Neither Ginger nor Saber nor Bear is on a walk. = This leaves Nutmeg as the only dog who is on a walk
+3. One of the dogs named after a spice is getting its ears scratched. = Nutmeg is already on a walk, Pepper is NOT getting its ears scratched, so this leaves Ginger as the remaining spice name dog  who is getting it ears scratched
+4. A dog not named for a spice is playing catch. = Saber and Bear are not spice names, one of them may be playing catch
+5. Bear is getting some exercise. = Bear is playing catch, so Pepper is burying a chew toy, and Saber must enjoying the remaining activity of taking a nap
+6. Therefore the dogs are doing the following activities:
+Saber = taking a nap
+Ginger = ears scratch
+Nutmeg = going for a walk
+Pepper = burying a chew toy
+Bear = playing catch
