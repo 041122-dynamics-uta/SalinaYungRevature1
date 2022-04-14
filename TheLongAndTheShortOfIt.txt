@@ -1,0 +1,19 @@
+Long and the Short of It
+
+Data:
+Weldon is taller than Delia but shorter than Zina.
+Leisha is taller than Benito but shorter than Delia and Weldon.
+Benito is not the shortest.
+Charlotte
+
+Logic:
+1. Zina > Weldon > Delia = Weldon is second because he is shorter than Zina but taller than Delia
+2. Weldon, Delia > Leisha > Benito = Leisha is shorter than Delia and Weldon, so she is fourth because Delia is third
+3. Benito is currently last but he is not the shortest, so that leaves Charlotte as the shortest neighborhood child
+4. Therefore from tallest to shortest:
+Zina
+Weldon
+Delia
+Leisha
+Benito
+Charlotte
