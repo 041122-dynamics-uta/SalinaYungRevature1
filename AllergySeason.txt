@@ -1,0 +1,14 @@
+Allergy Season
+
+Data & Logic:
+Five friends (Allegra, Ben, Clara, Flora, and Zach) are each allergic to something different: pollen, shellfish, bee stings, cats, or nuts.
+
+1. Allegra has a food allergy. = Allegra is allergic to either shellfish or nuts; NOT pollen, bee stings, or cats
+2. Ben can play with his kitten for hours without issue (or medicine). = Ben is allergic to pollen, shellfish, bee stings, or nuts; NOT cats
+3. Clara’s allergy is not related to animals. = Clara is allergic to pollen or nuts; NOT shellfish, bee stings or cats
+4. Flora has seasonal allergies. = Flora is allergic to pollen
+5. If Flora is allergic to pollen, then that leaves Clara with a nut allergy
+6. This leaves Allegra with a shellfish allergy.
+7. This leaves Ben with the bee sting allergy.
+8. Lastly, this leaves Zach with the remaining cat allergy
+9. Allegra = shellfish, Ben = bee sting, Clara = nuts, Flora = pollen, Zach = cats
