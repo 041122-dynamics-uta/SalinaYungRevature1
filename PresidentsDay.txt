@@ -1,0 +1,15 @@
+Presidents Day
+
+Data:
+George, William, John, Abe, and Millard have their birthdays on consecutive days, all between Monday and Friday.
+George’s birthday is as many days before Millard’s and William’s is after Abe’s.
+John is two days older than Abe.
+Millard’s birthday is on Thursday.
+
+Logic:
+1. Millard is on Thursday
+2. George is many days before Millard = Monday or Tuesday
+3. William is after Abe = Abe cannot be Friday
+4. John is two days older than Abe = Abe is not Thursday or Friday, therefore he must be on Wednesday to leave two days for John, and John must be on Monday
+5. This leaves George the only option remaining, which is Tuesday
+6. Therefore birthdays from Monday to Friday: John, George, Abe, Millard, William
