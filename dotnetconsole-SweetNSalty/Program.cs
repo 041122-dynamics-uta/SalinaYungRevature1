@@ -31,27 +31,27 @@ namespace dotnetconsole_SweetnSalty
                 if (i % 5 == 0 && i % 3 == 0)
                 {
                     //Then print sweet'nsalty with space and increment the sweetsalty count
-                    Console.Write(" Sweet'nSalty");
+                    Console.Write("Sweet'nSalty ");
                     sweetAndSaltyCount++;
                 }
                 //Else if i is only divisible by 3 with no remainder
                 else if (i % 3 == 0)
                 {
                     //Then print sweet with space and increment the sweet count
-                    Console.Write(" Sweet");
+                    Console.Write("Sweet ");
                     sweetCount++;
                 }
                 //Else if i is only divisible by 5 with no remainder
                 else if (i % 5 == 0)
                 {
                     //then print salty with space and increment the salty count
-                    Console.Write(" Salty");
+                    Console.Write("Salty ");
                     saltyCount++;
                 }
                 //If i is not a multiple of 5 or 3 then print i with space
                 else
                 {
-                    Console.Write($" {i}");
+                    Console.Write($"{i} ");
                 }
                 //Print per line
                 if (i % printNum == 0)
