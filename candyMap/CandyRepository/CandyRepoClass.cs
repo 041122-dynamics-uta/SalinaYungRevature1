@@ -9,7 +9,7 @@ namespace CandyRepository
     public class CandyRepoClass
     {
         public CandyMapperClass _mapper { get; set; }
-        string connectionString = ""; //empty for github push
+        string connectionString = $"Server=tcp:salinayungserver.database.windows.net,1433;Initial Catalog=SalinaYungP1;Persist Security Info=False;User ID=salinayungdb;Password=Revature+Azure;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public CandyRepoClass() 
         {
             this._mapper = new CandyMapperClass(); //go to mapper class for format
@@ -25,7 +25,7 @@ namespace CandyRepository
                 //command.Connection.Open();
                 SqlDataReader results = command.ExecuteReader();
                 
-                //use mapper to transfer into <list>store
+                //use mapper to transfer into <list>products
                 List<Products> pl = new List<Products>();
                 //while the database reader is reading
                 while(results.Read()) 
@@ -75,7 +75,7 @@ namespace CandyRepository
                 query1.Open();
                 SqlDataReader results = command.ExecuteReader();
                 
-                //use mapper to transfer into <list>store
+                //use mapper to transfer into <list>customers
                 List<Customers> cl = new List<Customers>();
                 while(results.Read()) 
                 {
@@ -113,7 +113,7 @@ namespace CandyRepository
                 return ol;
             }
         }
-
+//------------------------------------------------------------------------------------------------------
         public List<Products> ProductsAtStore1List()
         {
             //query db for products list
@@ -175,5 +175,32 @@ namespace CandyRepository
                 return null;
             }
         }
+
+        //this method will query db to see if email/pass exists
+        public Customers EmailPassComboExists(string email, string password)
+        {
+           string myQuery1 = "SELECT * FROM Customers WHERE Email = @e AND Pass = @p;";
+            
+            using (SqlConnection query1 = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(myQuery1, query1);
+                command.Parameters.AddWithValue("@e", email);
+                command.Parameters.AddWithValue("@p", password);
+                query1.Open();
+                //conduct query, only reading
+                SqlDataReader results = command.ExecuteReader();
+
+                if (results.Read()) //if results.read()
+                {
+                    Customers nc = _mapper.DboToCustomers(results);
+                    query1.Close();
+                    return nc;
+                } else 
+                {
+                    query1.Close();
+                    return null;
+                }
+            }
+        }
     }
-}
+}//EoNamespace

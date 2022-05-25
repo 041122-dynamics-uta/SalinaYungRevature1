@@ -49,5 +49,10 @@ namespace CandyBusiness
             Customers c = _repo.NewCustomer(FirstName, LastName, Email, Pass);
             return c;
         }
+        public Customers EmailPassComboExists(string Email, string Pass)
+        {
+            Customers nc = _repo.EmailPassComboExists(Email, Pass);
+            return nc;
+        }
     }
 }
