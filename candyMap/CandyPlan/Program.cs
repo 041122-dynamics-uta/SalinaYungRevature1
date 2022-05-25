@@ -16,10 +16,19 @@ namespace candyMap
             //instantiate to communicate with public business class and use their methods
             CandyBusinessClass cb = new CandyBusinessClass(crc);
 
+            static List<Customers> getCustomers()
+            {
+                CandyRepoClass customerrc = new CandyRepoClass();
+                CandyBusinessClass customerbc = new CandyBusinessClass(customerrc);
+                List<Customers> customer = customerbc.CustomersList();
+                return customer;
+            }
+
             //welcome msg
             Console.WriteLine("Welcome to the Candy Shop!");
 
             Customers newCustomer = new Customers(); //repo class
+            Customers existingCustomer = new Customers();
             bool logins = false;
             while(logins == false)
             {
@@ -32,9 +41,22 @@ namespace candyMap
                     string Email = Console.ReadLine();
                     Console.WriteLine("What is your password?");
                     string Pass = Console.ReadLine();
-                    //QUERY DB TO SEE IF CREDENTIALS EXISTS
-                    //end loop
-                    logins = true;
+                    //see if cust exists
+                    List<Customers> customers = getCustomers();
+                    for (int i = 0; i < customers.Count; i++)
+                    {
+                        //looping bug
+                        if (customers[i].Email == Email && customers[i].Pass == Pass)
+                        {
+                            Console.WriteLine("Welcome back!");
+                            //end loop
+                            logins = true;
+                        }
+                        else 
+                        {
+                            Console.WriteLine("Invalid login. Try again.");
+                        }
+                    }
                 break;
                 case "2": //register
                     Console.WriteLine("What is your first name?");
@@ -43,7 +65,7 @@ namespace candyMap
                     string registerLastName = Console.ReadLine();
                     Console.WriteLine("What is your email address?");
                     string registerEmail = Console.ReadLine();
-                    Console.WriteLine("What is your email address?");
+                    Console.WriteLine("What is your password?");
                     string registerPassword = Console.ReadLine();
                     logins = true;
                     //insert into db
@@ -142,8 +164,11 @@ namespace candyMap
                         if (pas.StoreId == 1)
                         {
                         Console.WriteLine($"Products available at ~Candy Girl, You Are My World~: {pas.ProductId}- {pas.ProductName}, {pas.ProductDescription} for ${pas.Price} each.");
-                        }
+                        Console.WriteLine("What would you like to purchase? Please write the productID.");
+                        }                   
                     }
+
+                    //Cart List . Add
                 }
                 else if (whichStore == "2")
                 {
@@ -152,6 +177,7 @@ namespace candyMap
                         if (pas.StoreId == 2)
                         {
                         Console.WriteLine($"Products available at ~I Want Candy, I Want Candy~: {pas.ProductId}- {pas.ProductName}, {pas.ProductDescription} for ${pas.Price} each.");
+                        Console.WriteLine("What would you like to purchase? Please write the productID.");
                         }
                     } 
                 }
@@ -162,6 +188,7 @@ namespace candyMap
                         if (pas.StoreId == 3)
                         {
                         Console.WriteLine($"Products available at ~Pour Some Sugar On Me~: {pas.ProductId}- {pas.ProductName}, {pas.ProductDescription} for ${pas.Price} each");
+                        Console.WriteLine("What would you like to purchase? Please write the productID.");
                         }
                     } 
                 }
