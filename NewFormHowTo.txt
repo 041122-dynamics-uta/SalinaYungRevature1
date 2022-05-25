@@ -1,0 +1,12 @@
+NewForm How-To
+
+NewForm(FormName)
+
+NewForm is one of the three functions that will change the state of the EDIT FORM control mode. NewForm will display a form populated with default values from the form's data source. In this control mode, the data cards and controls are editable, and it will accept new inputs. It is usually used in conjunction with the OnSelect formula of a button control, where it can Navigate you to the new form screen, and later with SubmitForm, which in this mode, creates a record and submits the data back to the data source.
+
+The other two functions that change the state of the EDIT FORM control mode are EditForm and ViewForm. In EditForm, the form is populated with the existing record and is editable. In ViewForm, the user is only allowed to view the form, it is not editable.
+
+OnSelect-
+ResetForm(FormName);
+NewForm(FormName);
+Navigate(ScreenName)
