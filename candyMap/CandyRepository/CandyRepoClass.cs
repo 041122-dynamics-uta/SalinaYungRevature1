@@ -9,7 +9,7 @@ namespace CandyRepository
     public class CandyRepoClass
     {
         public CandyMapperClass _mapper { get; set; }
-        string connectionString = $"Server=tcp:salinayungserver.database.windows.net,1433;Initial Catalog=SalinaYungP1;Persist Security Info=False;User ID=salinayungdb;Password=Revature+Azure;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        string connectionString = $"";
         public CandyRepoClass() 
         {
             this._mapper = new CandyMapperClass(); //go to mapper class for format
